@@ -1,0 +1,22 @@
+plugins {
+  id 'org.jetbrains.kotlin.jvm'
+  id 'java-gradle-plugin'
+  id 'maven-publish'
+}
+
+gradlePlugin {
+  plugins {
+    pluginOfOppression {
+      id = 'mutual.aid.oppression-plugin'
+      implementationClass = 'mutual.aid.gradle.state.ThePluginOfOppression'
+    }
+    peoplePlugin {
+      id = 'mutual.aid.people-plugin'
+      implementationClass = 'mutual.aid.gradle.people.ThePluginOfThePeople'
+    }
+  }
+}
+
+dependencies {
+  implementation 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21'
+}

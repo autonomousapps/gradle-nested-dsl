@@ -1,0 +1,4 @@
+plugins {
+  // We want to load the Kotlin plugin just once, in a single classloader
+  id 'org.jetbrains.kotlin.jvm' apply false
+}

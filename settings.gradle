@@ -1,0 +1,26 @@
+pluginManagement {
+  def kotlinVersion = providers.gradleProperty('kotlinVersion')
+      .forUseAtConfigurationTime()
+      .get()
+
+  repositories {
+    gradlePluginPortal()
+    mavenCentral()
+  }
+  plugins {
+    id 'org.jetbrains.kotlin.jvm' version kotlinVersion
+  }
+}
+
+dependencyResolutionManagement {
+  repositories {
+    mavenCentral()
+  }
+}
+
+rootProject.name = 'nested-dsl'
+
+includeBuild 'build-logic/plugins'
+
+include ':app'
+include ':app-kt'
